@@ -4,6 +4,8 @@
 const express = require('express');
 const ejs = require('ejs');
 const path = require('path')
+const passport = require('passport');
+
 
 const indexRouter = require('./routes/index')
 const taskCategoryRouter = require('./routes/Task-Categories')
@@ -19,8 +21,12 @@ app.set('view engine', 'ejs')
 
 // app.use (mounts) go here
 app.use('/', indexRouter)
-app.use('Task-Categories', taskCategoryRouter)
+// prepend the data that we are routing
+app.use('/Task-Categories', taskCategoryRouter)
 
+const port = 3000;
 
-
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
 
