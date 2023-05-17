@@ -50,7 +50,6 @@ app.use('/task-categories', taskCategoryRouter)
 app.use('/task', taskRouter)
 
 app.use(function (req, res, next) {
-	console.log(req)
 	next(createError(404))
 })
 

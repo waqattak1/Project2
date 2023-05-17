@@ -1,4 +1,4 @@
-const TaskCategory = require('../models/taskCategory');
+const TaskCategory = require('../models/TaskCategory');
 const Task = require('../models/task');
 
 function showTask(req, res, next) {
