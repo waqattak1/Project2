@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<h2>Task Categories</h2>
+
+<a href="/Task-Categories/new">Add a Task Category</a>
+
+<ul>
+    <% taskCategories.forEach(function(taskCategory) { %>
+        <li>
+            <form action="/Task-Categories/<%= taskCategory.id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+            </form>
+            <a href="/Task-Categories/<%= taskCategory.id %>">
+                <%= taskCategoryname %>
+            </a>
+        </li>
+        <% }); %>
+</ul>
+
+<%- include('../partials/footer') %>
+

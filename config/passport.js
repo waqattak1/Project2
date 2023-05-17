@@ -1,6 +1,8 @@
+const path = require('path')
 const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
 const User = require('../models/user')
+require('dotenv').config({ path: path.resolve(__dirname,'../.env')})
 console.log('peek env', process.env.GOOGLE_SECRET)
 
 passport.use(
