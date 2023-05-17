@@ -9,9 +9,10 @@
         <li>
             <form action="/Task-Categories/<%= taskCategory.id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
+                <a id="edit-btn" class="btn btn-outline-secondary btn-sm" href="/Task-Categories/<%= taskCategory.id %>/edit">Edit</a>
             </form>
             <a href="/Task-Categories/<%= taskCategory.id %>">
-                <%= taskCategoryname %>
+                <%= taskCategory.name %> 
             </a>
         </li>
         <% }); %>

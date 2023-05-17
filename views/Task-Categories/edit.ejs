@@ -1,0 +1,8 @@
+<%- include('../partials/header') %>
+
+<form action="/Task-Categories<%= taskCategory.id %>?_method=PUT" method="POST" autocomplete="off">
+    <input type="text" name="name" value="<%= taskCategory.name %>">
+    <button type="submit">Update Task Category</button>
+</form>
+
+<%- include('../partials/footer') %>

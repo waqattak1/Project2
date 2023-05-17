@@ -3,11 +3,13 @@ const router = express.Router();
 
 const taskCatCtrl = require('../controllers/Task-Categories')
 
-// Routes for task categories
 router.get('/', taskCatCtrl.index)
-router.post('/Task-Categories', taskCatCtrl.createTaskCategory)
-router.get('/Task-Categories/new', taskCatCtrl.newTaskCategory)
-router.put('/Task-Categories/:id', taskCatCtrl.updateTaskCategory)
-router.delete('/Task-Categories/:id', taskCatCtrl.deleteTaskCategory)
+router.get('/new', taskCatCtrl.newTaskCategory)
+router.post('/', taskCatCtrl.createTaskCategory)
+router.get('/:id', taskCatCtrl.show)
+router.get('/:id/edit', taskCatCtrl.updateTaskCategoryForm)
+router.put('/:id', taskCatCtrl.updateTaskCategory)
+router.delete('/:id', taskCatCtrl.deleteTaskCategory)
+
 
 module.exports = router
