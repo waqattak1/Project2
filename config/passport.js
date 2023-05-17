@@ -1,12 +1,10 @@
-const path = require('path')
 const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
 const User = require('../models/user')
-require('dotenv').config({ path: path.resolve(__dirname,'../.env')})
-console.log('peek env', process.env.GOOGLE_SECRET)
 
 passport.use(
-	new GoogleStrategy({
+	new GoogleStrategy(
+		{
 			clientID: process.env.GOOGLE_CLIENT_ID,
 			clientSecret: process.env.GOOGLE_SECRET,
 			callbackURL: process.env.GOOGLE_CALLBACK,
@@ -14,7 +12,7 @@ passport.use(
 		async function (accessToken, refreshToken, profile, cb) {
 			try {
 				let user = await User.findOne({ googleId: profile.id })
-				if (user) return cb(null, user) 
+				if (user) return cb(null, user)
 
 				user = await User.create({
 					name: profile.displayName,
@@ -37,6 +35,6 @@ passport.serializeUser(function (user, cb) {
 
 passport.deserializeUser(function (userId, cb) {
 	User.findById(userId)
-        .then(userDoc => cb(null, userDoc))
-        .catch(error => cb(error))
+		.then((userDoc) => cb(null, userDoc))
+		.catch((error) => cb(error))
 })

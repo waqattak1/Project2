@@ -12,31 +12,29 @@ function index(req, res, next) {
                 taskCategory,                
                 title: "My Task Categories"
             })
-        })
-        
+        })        
         .catch(next)
 }
 
 // CREATE
 function createTaskCategory(req, res, next) {
-    const taskCategory = new TaskCategory({ ...req.body, user: req.user._id });
-    taskCategory.save()
-        .then(() => res.redirect('/Task-Categories'))
-        .catch(next);
+    TaskCategory.create({ ...req.body, user: req.user._id })
+    .then(() => res.redirect('/Task-Categories'))
+    .catch(next)
 }
 
 // UPDATE
 function updateTaskCategory(req, res, next) {
     TaskCategory.findByIdAndUpdate(req.params.id, req.body, { new: true })
         .then((taskCategory) => res.redirect(`/Task-Categories/${taskCategory._id}`))
-        .catch(next);
+        .catch(next)
 }
 
 // DELETE
 function deleteTaskCategory(req, res, next) {
     TaskCategory.findByIdAndDelete(req.params.id)
         .then(() => res.redirect('/Task-Categories'))
-        .catch(next);
+        .catch(next)
 }
 
 // FORM FOR CREATING NEW TASK CATEGORY
