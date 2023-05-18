@@ -1,8 +1,34 @@
 <%- include('../partials/header') %>
+<style>
+    body {
+        background-color: #F0FFFF; /* Set the background color */
+    }
 
-<form action="/Task-Categories" method="POST" autocomplete="off">
-    <input type="text" name="name">
-    <button type="submit">Save Task Category</button>
-</form>
+    @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    /* Apply the animation to the h2 tag */
+    body {
+        animation-name: fadeIn;
+        animation-duration: 3s;
+    }
+
+</style>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/Task-Categories" method="POST" autocomplete="off" class="mb-3">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Task Category Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Task Category</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 <%- include('../partials/footer') %>

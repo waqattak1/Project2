@@ -1,8 +1,23 @@
 <%- include('../partials/header') %>
 
-<form action="/Task-Categories<%= taskCategory.id %>?_method=PUT" method="POST" autocomplete="off">
-    <input type="text" name="name" value="<%= taskCategory.name %>">
-    <button type="submit">Update Task Category</button>
-</form>
+<style>
+    body {
+        background-color: #F0FFFF; /* Set the background color */
+    }
+</style>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/Task-Categories<%= taskCategory.id %>?_method=PUT" method="POST" autocomplete="off" class="mb-3">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Task Category Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="<%= taskCategory.name %>" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Task Category</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 <%- include('../partials/footer') %>

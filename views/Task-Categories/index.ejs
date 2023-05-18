@@ -1,22 +1,46 @@
 <%- include('../partials/header') %>
 
-<h2>Task Categories</h2>
+<style>
+    body {
+        background-color: #F0FFFF; /* Set the background color */
+    }
 
-<a href="/Task-Categories/new">Add a Task Category</a>
+        /* Define the animation */
+        @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
 
-<ul>
-    <% taskCategories.forEach(function(taskCategory) { %>
-        <li>
-            <form action="/Task-Categories/<%= taskCategory.id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-                <a id="edit-btn" class="btn btn-outline-secondary btn-sm" href="/Task-Categories/<%= taskCategory.id %>/edit">Edit</a>
-            </form>
-            <a href="/Task-Categories/<%= taskCategory.id %>">
-                <%= taskCategory.name %> 
-            </a>
-        </li>
-        <% }); %>
-</ul>
+    /* Apply the animation to the h2 tag */
+    body {
+        animation-name: fadeIn;
+        animation-duration: 3s;
+    }
+
+</style>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="mb-3">Task Categories</h2>
+            <a href="/Task-Categories/new" class="btn btn-primary mb-3">Add a Task Category</a>
+            <ul class="list-group">
+                <% taskCategories.forEach(function(taskCategory) { %>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <a href="/Task-Categories/<%= taskCategory.id %>" class="text-decoration-none">
+                            <%= taskCategory.name %> 
+                        </a>
+                        <div>
+                            <a id="edit-btn" class="btn btn-outline-secondary btn-sm me-2" href="/Task-Categories/<%= taskCategory.id %>/edit">Edit</a>
+                            <form action="/Task-Categories/<%= taskCategory.id %>?_method=DELETE" method="POST" class="d-inline-block">
+                                <button type="submit" class="btn btn-danger btn-sm">X</button>
+                            </form>
+                        </div>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <%- include('../partials/footer') %>
-

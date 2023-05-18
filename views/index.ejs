@@ -1,36 +1,49 @@
 <%- include('./partials/header') %>
 
-<!-- <h2>MAIN PAGE</h2> -->
-<!-- <div style="text-align: center;">
-    <h2>MAIN PAGE</h2>
-  </div> -->
-
-  <style>
+<style>
     html, body {
-      height: 100%;
-      margin: 0;
-      background-color: #F2F2F2; /* Adjust the color code as desired */
+        height: 100%;
+        margin: 0;
+        background-color: #F0FFFF; /* Adjust the color code as desired */
+        font-family: Arial, sans-serif; /* You can change this to any font you like */
     }
-  
+
+        /* Define the animation */
+        @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    /* Apply the animation to the h2 tag */
+    h2, .centered {
+        animation-name: fadeIn;
+        animation-duration: 3s;
+    }
+
+    h2 {
+        font-size: 3.5em; /* Increases the size of the text */
+        font-weight: bold; /* Makes the text bolder */
+        color: #000080; /* Changes the color of the text to dark blue */
+    }
+
     .centered {
-      border: solid;
-      border-radius:20px; 
-      width: 25%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      margin-top: 400px;
-      margin-left: 600px;
+        border: 10px solid #000080; /* Changes the border color to dark blue */
+        border-radius:20px; 
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin-top: 400px;
+        margin-left: 700px;
+        padding: 20px;
     }
 
-  </style>
-  
-  <div class="centered">
+</style>
+
+<div class="centered">
     <h2>MY TO-DO LIST</h2>
-  </div>
-
-
-  
+</div>
 
 <%- include('./partials/footer') %>
+

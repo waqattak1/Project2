@@ -1,25 +1,53 @@
 <%- include('../partials/header.ejs') %>
 
-<h3><%= taskCategory.name %></h3>
+<style>
+    body {
+        background-color: #F0FFFF; /* Set the background color */
+    }
 
-<ul>
-    <% taskCategory.tasks.forEach(function(task) { %>
-        <li>
-            <form action="/task/<%= taskCategory.id %>/<%= task.id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
+        /* Define the animation */
+        @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    /* Apply the animation to the h2 tag */
+    body {
+        animation-name: fadeIn;
+        animation-duration: 3s;
+    }
+
+</style>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="mb-3"><%= taskCategory.name %></h3>
+
+            <ul class="list-group mb-3">
+                <% taskCategory.tasks.forEach(function(task) { %>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <a href="/task/<%= task.id %>" class="text-decoration-none">
+                            <%= task.title %>
+                        </a>
+                        <form action="/task/<%= taskCategory.id %>/<%= task.id %>?_method=DELETE" method="POST" class="d-inline-block">
+                            <button type="submit" class="btn btn-danger btn-sm">X</button>
+                        </form>
+                    </li>
+                <% }); %>
+            </ul>
+
+            <form action="/task/<%= taskCategory.id %>" method="POST" class="mb-3">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Task Title</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Task</button>
             </form>
-            <a href="/task/<%= task.id %>">
-                <%= task.title %>
-            </a>
-        </li>
-        <% }); %>
-</ul>
 
-<form action="/task/<%= taskCategory.id %>" method="POST">
-    <input type="text" name="title">
-    <button type="submit">Add Task</button>
-</form>
-
-<a href="/Task-Categories/<%= taskCategory.id %>/edit">Edit</a>
+            <a href="/Task-Categories/<%= taskCategory.id %>/edit" class="btn btn-outline-secondary">Edit</a>
+        </div>
+    </div>
+</div>
 
 <%- include('../partials/footer.ejs') %>
