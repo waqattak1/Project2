@@ -22,17 +22,18 @@ function showTask(req, res, next) {
 
 function createTask(req, res, next) {
   const categoryId = req.params.categoryId; // Assuming category ID is provided in the request parameters
+  console.log(req.body)
 
   TaskCategory.findById(categoryId)
     .then((category) => {
       const taskData = req.body; // Assuming task data is sent in the request body
-      const task = new Task(taskData);
+      const task = req.body;
 
       category.tasks.push(task);
       category.save()
     })
     .then(() => {
-      res.redirect(`/categories/${categoryId}`); // Redirect to the task category page
+      res.redirect(`/Task-Categories/${categoryId}`); // Redirect to the task category page
     })
     .catch(next)
 }

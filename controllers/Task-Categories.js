@@ -39,9 +39,9 @@ function newTaskCategory(req, res) {
 // SHOW
 function show(req, res, next) {
 	TaskCategory.findById(req.params.id)
-		.then((battleTeam) => {
+		.then((taskCategory) => {
 			res.render('task-categories/show', {
-				taskCategories,
+				taskCategory,
 				title: 'Task Category Details',
 			})
 		})
