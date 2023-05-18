@@ -8,16 +8,31 @@
         font-family: Arial, sans-serif; /* You can change this to any font you like */
     }
 
-        /* Define the animation */
-        @keyframes fadeIn {
+    /* Define the animation */
+    @keyframes fadeIn {
         0% {opacity: 0;}
         100% {opacity: 1;}
     }
 
-    /* Apply the animation to the h2 tag */
+    @keyframes rotate {
+        0% {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }
+
+    /* Apply the animation to the h2 tag and the div */
     h2, .centered {
         animation-name: fadeIn;
         animation-duration: 3s;
+    }
+
+    #rotating-div img {
+        animation: rotate 5s linear infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 53px; /* Adjust as needed */
+        height: 53px; /* Adjust as needed */
+        /* You might need to adjust these values to position the div correctly */
     }
 
     h2 {
@@ -43,7 +58,11 @@
 
 <div class="centered">
     <h2>MY TO-DO LIST</h2>
+    <div id="rotating-div">
+        <img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Smiling_Face_Emoji_grande.png?v=1571606036" alt="placeholder image">
+    </div>
 </div>
 
 <%- include('./partials/footer') %>
+
 

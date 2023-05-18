@@ -59,15 +59,17 @@ function updateTask(req, res, next) {
 function deleteTask(req, res, next) {
     const categoryId = req.params.categoryId; // Assuming category ID is provided in the request parameters
     const taskId = req.params.taskId; // Assuming task ID is provided in the request parameters
+    console.log(taskId)
   
     TaskCategory.findById(categoryId)
       .then((category) => {  
         const task = category.tasks.id(taskId); // Retrieve the specific task within the category 
-        task.remove(); // Remove the task from the category  
+        console.log(task)
+        task.deleteOne(); // Remove the task from the category  
         category.save()
         })
       .then(() => {
-        res.redirect(`/categories/${categoryId}`); // Redirect to the task category page
+        res.redirect(`/Task-Categories/${categoryId}`); // Redirect to the task category page
       })
       .catch(next) 
 }
