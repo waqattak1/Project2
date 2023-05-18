@@ -9,9 +9,9 @@
 ## Wireframe for main page
 ![Alt Text](assets/SCREEN1_WF.jpeg)
 ## Wireframe for page 2
-![Alt Text](assets/SCREEN2_WF.jpeg)
+![Alt Text](assets/Screen2_WF.jpg)
 ## Wireframe for page 3
-![Alt Text](assets/SCREEN3_WF.jpeg)
+![Alt Text](assets/screen3_WF.jpg)
 
 ## List of technologies
 ### This app made use of the following technologies: 
