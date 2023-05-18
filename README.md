@@ -1,7 +1,7 @@
 # My To-Do List
 
 ## Description
-### This is a to-do list app.
+### This is a to-do list app. It is meant for users who would like web-based task-tracker that they can access at all times.
 
 ## Entity Relationship Diagram (ERD)
 ![Alt Text](assets/ERD.png)
@@ -12,9 +12,9 @@
 ![Alt Text](assets/screen3_WF.jpg)
 
 ## Screenshots for app
-![Alt Text](assets/SCREEN1_WF.jpeg)
-![Alt Text](assets/Screen2_WF.jpg)
-![Alt Text](assets/screen3_WF.jpg)
+![Alt Text](assets/MainPage_Screengrab.png)
+![Alt Text](assets/Page2_Screengrab.png)
+![Alt Text](assets/Page3_Screengrab.png)
 
 ## List of technologies
 ### This app made use of the following technologies: 
