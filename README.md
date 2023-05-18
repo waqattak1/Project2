@@ -6,9 +6,11 @@
 ## Entity Relationship Diagram (ERD)
 ![Alt Text](assets/ERD.png)
 
-## Wireframes
+## Wireframe for main page
 ![Alt Text](assets/SCREEN1_WF.jpeg)
+## Wireframe for page 2
 ![Alt Text](assets/SCREEN2_WF.jpeg)
+## Wireframe for page 3
 ![Alt Text](assets/SCREEN3_WF.jpeg)
 
 ## List of technologies
