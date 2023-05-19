@@ -19,6 +19,8 @@
 ## List of technologies
 ### This app made use of the following technologies: 
 * Node.js 
+* Express
+* Bootstrap
 * Javascript 
 * HTML 
 * CSS 
