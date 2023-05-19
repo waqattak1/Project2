@@ -1,7 +1,7 @@
 # My To-Do List
 
 ## Description
-### This is a to-do list app. It is meant for users who would like web-based task-tracker that they can access at all times.
+### This is a to-do list app. It is meant for users who would like a web-based task-tracker that they can access at all times.
 
 ## Entity Relationship Diagram (ERD)
 ![Alt Text](assets/ERD.png)
